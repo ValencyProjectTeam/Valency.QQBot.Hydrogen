@@ -191,7 +191,21 @@ namespace Valency.QQBot.Hydrogen
 						return await SendSteamHelp(ev);
 				}
 			}
-			return false;
+			else if (root == "reg")
+			{
+				Logger.WriteLog("CMD",$"添加群聊：{action}",ConsoleColor.Blue);
+				if (string.IsNullOrEmpty(action)) return await SendReply(ev, "❌ 用法: rss add-group [ID/this]");
+				string targetId = action == "this" ? ev.GroupId.ToString() : action;
+
+				if (!ConfigManager.Config.TargetGroupIds.Contains(targetId))
+				{
+					ConfigManager.Config.TargetGroupIds.Add(targetId);
+					ConfigManager.Save();
+					return await SendReply(ev, $"✅ 已添加群目标: {targetId}");
+				}
+				return await SendReply(ev, $"ℹ️ 群组 {targetId} 已经在推送列表中。");
+			}
+				return false;
 		}
 
 		// --- 帮助信息模板 ---
@@ -290,7 +304,7 @@ namespace Valency.QQBot.Hydrogen
 					catch (Exception ex) { Logger.WriteLog("RSS-ERROR", $"{url} -> {ex.Message}", ConsoleColor.Red); }
 				}
 				isFirstRun = false;
-				await Task.Delay(TimeSpan.FromMinutes(5), token);
+				await Task.Delay(TimeSpan.FromMinutes(1), token);
 			}
 		}
 	}
@@ -444,7 +458,7 @@ namespace Valency.QQBot.Hydrogen
 			await bot.StartAsync();
 			await bot.SendGroupForwardMessageAsync(new GroupForwardMessageSend
 			{
-				GroupId = ConfigManager.Config.TargetGroupIds.FirstOrDefault() ?? "0",
+				GroupId = "1071939984",
 				Messages = MessageChainBuilder.Create().AddTextMessage($"来自{Environment.MachineName}的机器人已启动~欢迎和我聊天呀~").Build()
 			});
 
@@ -459,7 +473,7 @@ namespace Valency.QQBot.Hydrogen
 				e.Cancel = true;
 				await bot.SendGroupForwardMessageAsync(new GroupForwardMessageSend
 				{
-					GroupId = ConfigManager.Config.TargetGroupIds.FirstOrDefault() ?? "0",
+					GroupId = "1071939984",
 					Messages = MessageChainBuilder.Create().AddTextMessage($"来自{Environment.MachineName}的机器人正在关闭~希望下次还能遇到你~").Build()
 				});
 				Logger.WriteLog("SYSTEM", "正在关闭服务...", ConsoleColor.Yellow);
