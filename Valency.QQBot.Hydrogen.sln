@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valency.QQBot.Hydrogen", "Valency.QQBot.Hydrogen\Valency.QQBot.Hydrogen.csproj", "{13FD0784-94D4-4760-A84A-96CB35ED9E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valency.QQBot.Hydrogen.AI", "Valency.QQBot.Hydrogen.AI\Valency.QQBot.Hydrogen.AI.csproj", "{E348AB89-715B-4C80-A140-5AC1D809F4D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13FD0784-94D4-4760-A84A-96CB35ED9E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FD0784-94D4-4760-A84A-96CB35ED9E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FD0784-94D4-4760-A84A-96CB35ED9E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FD0784-94D4-4760-A84A-96CB35ED9E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E348AB89-715B-4C80-A140-5AC1D809F4D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E348AB89-715B-4C80-A140-5AC1D809F4D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E348AB89-715B-4C80-A140-5AC1D809F4D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E348AB89-715B-4C80-A140-5AC1D809F4D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C4CFD50-B31B-4960-8BC6-DD0977A7D068}
+	EndGlobalSection
+EndGlobal
